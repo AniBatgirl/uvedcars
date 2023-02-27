@@ -143,16 +143,17 @@
 		<div id="selection">
 			<?= generate_posts()?>
 
-			
+
 		</div>
 		<div id="showMore">
 			<a href="#">Zobrazit dalších 30 produktů</a>
 		</div>
 	</div>
     <?php
-        else:
-            echo "Ahoj";
-        endif;
+    else:
+        echo generate_posts();
+
+    endif;
     ?>
 	
 	<div id="benefits">
