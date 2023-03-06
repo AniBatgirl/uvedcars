@@ -8,6 +8,7 @@
         if (have_posts()) {
             while (have_posts()) {
                 the_post();
+
                  $output .= many_posts();
             }
 
@@ -15,9 +16,10 @@
         return $output;
     }
 
+#TODO rozdelit nasledujici funkci na dve v tady tyhle nahore je volat a posilat wordpressovsky funkce
 
-
-
+#TODO nauc se pouzivat get_post_custom!
+#TODO menus musi mit omezeny limit submenu
 function many_posts() {
 
     $output = "";
@@ -44,7 +46,7 @@ function many_posts() {
                     <h4>".get_the_title()."</h4>
                 </div>
                 <div class=\"tyreParameters\">
-                    ".get_the_content()."
+                    ".wp_trim_words(get_the_content(), 30, '...')."  
                 </div>
                 </a>
                 <h6 class=\"price\">1129,-</h6>
